@@ -21,22 +21,22 @@ Resources, Records, Reminder
    C++， Python
 
 
-### [基础语言学习](ProgramLanguageBasis)
+### 基础语言学习
 1. python 找本书理解一下基础；
 2. C++： 指针，容器，map, list, 继承多态，垃圾回收等；
 3. 做 C++ 小项目；
 
 
-### [计算机基础知识](ComputerOperationSystemBasis)
+### 计算机基础知识
 1. 操作系统（看一本书，抽出时间集中看）
 2. 计算机网络（待定）
 
 
-### [传统机器学习基础知识](ML)
+### 传统机器学习基础知识
 1. SVM，KNN，PCA，LDA....公式推导
 
 
-### [深度学习](DL)
+### 深度学习
 1. 基础框架（论文）：CNN，RCNN系列，VGG，SGD，Resnet，Googlenet，GAN，RNN，LSTM，GRU
 2. 框架对比，优缺点
 3. 每周看面经，收集3-5道相关面试题；
