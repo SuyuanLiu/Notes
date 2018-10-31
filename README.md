@@ -5,7 +5,7 @@
 Resources, Records, Reminder
 
 为求职做准备(6个月)。记录每周进展，存放相应的学习资料。
-
+目标岗位：软开
 
 ## 计划
 
@@ -29,16 +29,15 @@ Resources, Records, Reminder
 
 ### 计算机基础知识
 1. 操作系统（看一本书，抽出时间集中看）
-2. 计算机网络（待定）
+2. 计算机网络（很重要）
 
 
-### 传统机器学习基础知识
-1. SVM，KNN，PCA，LDA....公式推导
+### 数据库MySQL，SQL
 
 
-### 深度学习
-1. 基础框架（论文）：CNN，RCNN系列，VGG，SGD，Resnet，Googlenet，GAN，RNN，LSTM，GRU
-2. 框架对比，优缺点
-3. 每周看面经，收集3-5道相关面试题；
+### Linux操作系统基础
+1. 基础知识
+
+
 
 
