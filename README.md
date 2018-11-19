@@ -2,9 +2,7 @@
 
 Resources, Records, Reminder
 
-为求职做准备(6个月)。记录每周进展，存放相应的学习资料。
-
-具体从以下几个方面进行准备(参考牛客网大神总结,忘记存链接了,后面找一下...)：
+下面给出我的计划，算法、项目以及阅读书单。
 
 ## [算法](https://github.com/SuyuanLiu/Leetcode)
 
@@ -12,36 +10,50 @@ Resources, Records, Reminder
 2. 刷题顺序（基于LeetCode）： 首先按照类别刷一遍，然后随机选取，最后刷一遍剑指offer；
 3. 刷题语言：C++， Python
 
+## 项目计划
+
+C++：
+
+机器学习：
 
 
+## 书单
 
-## 基础语言学习
+C++：
 
-1. python 找本书理解一下基础；
-2. C++：《C++ Primer》，《stl源码剖析》，《深度探索C++对象模型》，重点：虚函数，虚继承，vector等容器的底层实现及C++新特性等； 
+重点：虚函数，虚继承，vector等容器的底层实现及C++新特性等，指针，容器，map, list, 继承多态，垃圾回收等；
 
-指针，容器，map, list, 继承多态，垃圾回收等；
-3. 做 C++ 小项目；
+[ ] 《C++ primer》
+[ ] 《深入探索C++对象模型》
+[ ] 《stl源码剖析》
 
+网络与操作系统，Linux：
 
-## 网络与操作系统
+[ ] 《计算机网络》（谢希仁），重点：TCP与UDP区别，TCP三次握手、四次挥手；
+[ ] 《现代操作系统》，重点：文件系统，进程线程，进程间通信，线程同步，程序内存空间；
+[ ] 《Linux多线程服务器编程-使用muduo C++网络库》（陈硕）了解概念：socket编程，各种同步锁，io多路复用，负载均衡，一致性哈希，线程池，对象池，任务队列等；
 
-1. 《现代操作系统》，重点：文件系统，进程线程，进程间通信，线程同步，程序内存空间；
-2. 谢希仁《计算机网络》，重点：TCP与UDP区别，TCP三次握手、四次挥手；
+数据库：
 
+C++对数据库的要求没有Java高；
 
-## 数据库MySQL，SQL
+[ ] 《高性能MySQL》，重点：mysql引擎，索引，事务特性，隔离级别，脏读，幻读；
+[ ] 《redis设计与实现》 /《 Redis实战》，重点：redis的五种数据类型，redis的单线程实现，redis集群高可用；
 
-1. 《redis设计与实现》，重点：redis的五种数据类型，redis的单线程实现，redis集群高可用；
-2. 《高性能mysql》，重点：mysql引擎，索引，事务特性，隔离级别，脏读，幻读；
-2. C++对数据库的要求没有Java高；
+算法：
 
-## Linux操作系统基础
+[ ] 《大话数据结构》
+[ ] 《剑指offer》
 
-1. 《Linux多线程服务器编程》，了解概念：socket编程，各种同步锁，io多路复用，负载均衡，一致性哈希，线程池，对象池，任务队列等；
+机器学习：
 
-## 机器学习
+[ ] 《统计学习方法》（李航）
+[ ] 《机器学习实战》（Peter Harrington）
 
-1. 
+## 参考
 
+1. https://github.com/zslomo/2019-Autumn-recruitment-experience/blob/master/%E7%AE%97%E6%B3%95%E5%B2%97%E7%A7%8B%E6%8B%9B%E5%87%86%E5%A4%87%E6%8C%87%E5%8D%97.md
+2. https://www.nowcoder.com/discuss/142151?type=2&order=4&pos=30&page=1
+
+## [Friend's Countdown for Me](https://kexin-li.github.io/countdown/)
 
