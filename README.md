@@ -14,10 +14,10 @@ Resources, Records, Reminder
 
 C++：
 
-机器学习：
-
+ML:
 
 ## 书单
+
 
 - [ ] 《C++ primer》
 - [ ] 《深度探索C++对象模型》
@@ -31,6 +31,8 @@ C++：
 - [ ] 《剑指offer》
 - [ ] 《统计学习方法》（李航）
 - [ ] 《机器学习实战》（Peter Harrington）
+
+
 
 ## 参考
 
