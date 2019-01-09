@@ -5,18 +5,16 @@
 ## Index
 
 - [Variable生成](#Tensorflow中variable生成方法)
-- [tf.Variable与tf.get_variable](#tf.Variable&tf.get_variable)
-- [变量重用](#使用tf.get_variable进行变量重用)
-- [Scope使用](#Tensorflow中几种Scope的对比)
+- [Scope使用](#Tensorflow中Scope的对比)
+- [实现变量重用](#实现变量重用)
 
 ## Tensorflow中variable生成方法
 
-### tf.Variable&tf.get_variable
-
 Tensorflow中生成variable有两种方法：`tf.get_variable()` 与 `tf.Variable()`。
- 
-- `tf.Variable()`：每次定义都生成一个新的变量。因此，当定义name相同的变量，系统为避免名字冲突，会自动给它加上编号，以区分它们，此时它们的name其实并不一样，本质上它们也是不同的变量。
-- `tf.get_variable()`：每次定义时要么是产生新变量，要么提取之前的变量。它在定义name相同的变量，系统会去提取之前的变量（而不是生成新的变量），但是之前的变量如果没被说明可重复使用，就会报错。
+
+`tf.Variable()`：每次定义都生成一个新的变量。因此，当定义name相同的变量，系统为避免名字冲突，会自动给它加上编号，以区分它们，此时它们的name其实并不一样，本质上它们也是不同的变量。
+
+`tf.get_variable()`：每次定义时要么是产生新变量，要么提取之前的变量。它在定义name相同的变量，系统会去提取之前的变量（而不是生成新的变量），但是之前的变量如果没被说明可重复使用，就会报错。
 
 ``` python
 with tf.name_scope('A'):
@@ -47,32 +45,7 @@ v1 = tf.Variable(name='var1', initial_value=[2])     # v1.name:   var1:0
 v2 = tf.get_variable(name='var2', shape=[1], initi   # v2.name:   var1_1:0
 ```
 
-### 使用tf.get_variable()进行变量重用
-
-要想重用变量，要结合`tf.variable_scope()`与`tf.get_variable()`，有两种方法：
-- 设置`tf.variable_scope`中变量`reuse=tf.AUTO_REUSE`。注意如果要想直接设置为True,应当在定义之后在reuse，否则第一次出现tf.get_variable类型变量无法reuse，会报错；
-- 在后面加上scope.reuse_variables().
-
-注意：这边`tf.get_variable()`生成的变量，名字前面出现由`tf.variable_scope`定义的scope名字，所以，在使用`tf.Variable()`与`tf.get_variable()`定义name相同的变量，系统会自动为它们加上编号。
-
-``` python
-# one
-with tf.variable_scope('A', reuse=tf.AUTO_REUSE) as scope:
-    initializer = tf.constant_initializer()
-    v1 = tf.Variable(name='var1', initial_value=[2])                         # v1.name:   A/var1:0
-    v2 = tf.get_variable(name='var1', shape=[1], initializer=initializer)    # v2.name:   A/var1_1:0
-    v3 = tf.get_variable(name='var1', shape=[1], initializer=initializer)    # v3.name:   A/var1_1:0
-
-# two
-with tf.variable_scope('A') as scope:
-    initializer = tf.constant_initializer()
-    v1 = tf.Variable(name='var1', initial_value=[2])                         # v1.name:   A/var1:0
-    v2 = tf.get_variable(name='var1', shape=[1], initializer=initializer)    # v2.name:   A/var1_1:0
-    scope.reuse_variables()       # ---- reuse ---                             
-    v3 = tf.get_variable(name='var1', shape=[1], initializer=initializer)    # v3.name:   A/var1_1:0
-```
-
-## Tensorflow中几种Scope的对比
+## Tensorflow中Scope的对比
 
 Scope主要是为了变量共享而使用的。目前TensorFlow中有两种scope：`tf.name_scope, tf.variable_scope,` 另外：tf.variable_op_scope(deprecated), tf.op_scope(deprecated)。
 
@@ -95,6 +68,31 @@ with tf.name_scope('A'):
     v1 = tf.get_variable('var1', [1], dtype=tf.float32)  # v1.name:    A/var1:0
     v2 = tf.Variable(1, name='var2', dtype=tf.float32)   # v2.name:    var2:0
     a = tf.add(v1, v2)                                   # a.name:     Add:0
+```
+
+## 实现变量重用
+
+要想重用变量，要结合`tf.variable_scope()`与`tf.get_variable()`，有两种方法：
+- 设置`tf.variable_scope`中变量`reuse=tf.AUTO_REUSE`。注意如果要想直接设置为True,应当在定义之后在reuse，否则第一次出现tf.get_variable类型变量无法reuse，会报错；
+- 在后面加上scope.reuse_variables().
+
+注意：这边`tf.get_variable()`生成的变量，名字前面出现由`tf.variable_scope`定义的scope名字，所以，在使用`tf.Variable()`与`tf.get_variable()`定义name相同的变量，系统会自动为它们加上编号。
+
+``` python
+# one
+with tf.variable_scope('A', reuse=tf.AUTO_REUSE) as scope:
+    initializer = tf.constant_initializer()
+    v1 = tf.Variable(name='var1', initial_value=[2])                         # v1.name:   A/var1:0
+    v2 = tf.get_variable(name='var1', shape=[1], initializer=initializer)    # v2.name:   A/var1_1:0
+    v3 = tf.get_variable(name='var1', shape=[1], initializer=initializer)    # v3.name:   A/var1_1:0
+
+# two
+with tf.variable_scope('A') as scope:
+    initializer = tf.constant_initializer()
+    v1 = tf.Variable(name='var1', initial_value=[2])                         # v1.name:   A/var1:0
+    v2 = tf.get_variable(name='var1', shape=[1], initializer=initializer)    # v2.name:   A/var1_1:0
+    scope.reuse_variables()       # ---- reuse ---                             
+    v3 = tf.get_variable(name='var1', shape=[1], initializer=initializer)    # v3.name:   A/var1_1:0
 ```
 
 
