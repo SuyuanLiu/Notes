@@ -5,8 +5,8 @@
 ## Index
 
 - [Variable生成](#Tensorflow中variable生成方法)
-    - [tf.Variable与 tf.get_variable](#tf.Variable&tf.get_variable)
-    - [变量重用](#使用tf.get_variable进行变量重用)
+- [tf.Variable与tf.get_variable](#tf.Variable&tf.get_variable)
+- [变量重用](#使用tf.get_variable进行变量重用)
 - [Scope使用](#Tensorflow中几种Scope的对比)
 
 ## Tensorflow中variable生成方法
