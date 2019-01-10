@@ -49,6 +49,9 @@ v2 = tf.get_variable(name='var2', shape=[1], initi   # v2.name:   var1_1:0
 
 Scope主要是为了变量共享而使用的。目前TensorFlow中有两种scope：`tf.name_scope, tf.variable_scope,` 另外：tf.variable_op_scope(deprecated), tf.op_scope(deprecated)。
 
+- **tf.name_scope:** 只针对operation.
+- **tf.variable_scope:**针对operation和variables.
+
 `tf.name_scope和tf.variable_scope`对使用`tf.Variable`生成的变量作用是一样的，都是在变量名前面加入scope name作为前缀，具体代码参考上面。
 
 `tf.name_scope`对使用`tf.get_variable()`生成的变量，不会产生前缀；只有在`tf.variable_scope`内生成的变量才会加入scope name作为前缀。(使用`tf.Variable_scope`主要是为了变量的重复使用。)
