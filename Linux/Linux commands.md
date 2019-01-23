@@ -60,7 +60,7 @@ chmod 777 run.sh
 python test.py
 ```
 
-如果是Python3版本的，写成python3即可；后面跟着执行文件的路径，如果sh文件与py文件不在同一目录下，要把相对路径补充完整。然后再shell终端内运行sh文件：(注意**./**不能少)
+如果是Python3版本的，写成python3即可；后面跟着执行文件的路径，如果sh文件与py文件不在同一目录下，要把相对路径补充完整。然后再shell终端内运行sh文件：(注意``./``不能少)
 
 ```
 ./run.sh
@@ -70,14 +70,14 @@ python test.py
 
 如果希望运行多个Python文件（test1.py, test2.py, test3.py），有顺序执行和并行执行两种情况：
 
-**顺序执行：**在sh文件内分别写出对应的命令，以换行分隔开不同的文件，注意不要有其他的符号，不要多输入空格：
+**顺序执行**：在sh文件内分别写出对应的命令，以换行分隔开不同的文件，注意不要有其他的符号，不要多输入空格：
 ``` 
 python test1.py
 python test2.py
 python test3.py
 ```
 
-**并行执行：**在sh文件内以&连接不同的文件，不要换行, &前后可以有空格：
+**并行执行**：在sh文件内以&连接不同的文件，不要换行, &前后可以有空格：
 ```
 python test1.py & python test2.py & python test3.py
 ```
@@ -105,7 +105,7 @@ if __name__ == '__main__':
     print(parser.gpu, parser.batch_size, parser.test)
 ```
 
-sh代码
+**sh代码**
 ```
 python test.py --test= --gpu=1 --batch_size=16
 ```
@@ -130,7 +130,7 @@ python test.py --test= --gpu=1 --batch_size=16 & python test.py --test=1 --gpu=2
 
 推荐使用``nohup ./run.sh &``，这样断网或者关电脑，代码都不会暂停了。（也不需要建立多个screen了）
 
-**注意：**在shell脚本中不要乱写空格，会导致报错的！
+**注意**：在shell脚本中不要乱写空格，会导致报错的！
 
 [Back to Index](#Index)
 
