@@ -50,22 +50,28 @@ vi +10 filename    # 进入filename文件的第10行，+10可省略（即不明�
 
 使用shell脚本运行Python代码，可以建一个sh文件，比如``run.sh``,然后要给这个文件权限，在shell终端中，执行如下命令：
 
-```chmod 777 run.sh```
+```
+chmod 777 run.sh
+```
 
 然后用记事本编辑run.sh文件，在里面输入要执行的Python文件即可（假设代码文件名为test.py），比如：
 
-``` python test.py```
+``` 
+python test.py
+```
 
 如果是Python3版本的，写成python3即可；后面跟着执行文件的路径，如果sh文件与py文件不在同一目录下，要把相对路径补充完整。然后再shell终端内运行sh文件：(注意**./**不能少)
 
-``` ./run.sh ```
+```
+./run.sh
+```
 
 ### 同时运行多个文件
 
 如果希望运行多个Python文件（test1.py, test2.py, test3.py），有顺序执行和并行执行两种情况：
 
 **顺序执行：**在sh文件内分别写出对应的命令，以换行分隔开不同的文件，注意不要有其他的符号，不要多输入空格：
-```
+``` 
 python test1.py
 python test2.py
 python test3.py
@@ -108,14 +114,14 @@ python test.py --test= --gpu=1 --batch_size=16
 
 假设要运行同一个文件，但是设置不同的参数，sh文件可以这样写：
 
-顺序执行
+**顺序执行**
 ```
 python test.py --test= --gpu=1 --batch_size=16
 python test.py --test=1 --gpu=2 --batch_size=32
 python test.py --test=1 --gpu=3 --batch_size=64
 ```
 
-并行执行
+**并行执行**
 ```
 python test.py --test= --gpu=1 --batch_size=16 & python test.py --test=1 --gpu=2 --batch_size=32 & python test.py --test=1 --gpu=3 --batch_size=64
 ```
