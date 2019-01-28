@@ -130,7 +130,10 @@ python test.py --test= --gpu=1 --batch_size=16 & python test.py --test=1 --gpu=2
 
 推荐使用``nohup ./run.sh &``，这样断网或者关电脑，代码都不会暂停了。（也不需要建立多个screen了）
 
-**注意**：在shell脚本中不要乱写空格，会导致报错的！
+**注意**：在shell脚本中不要乱写空格，会导致报错的！   
+
+如果使用``nohup ./run.sh &``，并且run.sh文件中只执行一个文件的话，最后要加一个空格，不然运行不了。
+
 
 [Back to Index](#Index)
 
