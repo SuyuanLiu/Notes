@@ -2,5 +2,5 @@
 
 电脑上的xftp的配置图。
 
-[!xftp](xftp-all)
-[!xftp1](xftp)
+![xftp](Pics/xftp/xftp-all.png)
+![xftp1](Pics/xftp/xftp.png)
