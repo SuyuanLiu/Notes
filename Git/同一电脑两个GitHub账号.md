@@ -8,7 +8,7 @@
 - 在对应文件夹下设置
 ## 生成公钥
 
-在Mac下使用命令：`ls ~./ssh/`查看已有的密钥，比如：id_rsa和id_rsa_pub是一对密钥。 
+在Mac下使用命令：`ls ~/.ssh/`查看已有的密钥，比如：id_rsa和id_rsa_pub是一对密钥。 
 
 生成新的密钥，使用命令：`ssh-keygen -t rsa -f ~./ssh/id_rsa_2 -C "yourmail@xxx.com"`。
 - id_rsa_2为自己为文件取的名字，可自己更改，只要不与之前的密钥文件名重复即可；
