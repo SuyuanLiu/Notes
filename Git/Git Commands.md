@@ -31,7 +31,7 @@ git rebase -i HEAD～3    # This is more convinient.
 然后会弹出vim窗口，倒序列出commit情况.
 ![img](Images/git-rebase-info.png)
 
-这边要了解两个命令：`pick，squach`。pick是要执行这个commit，squach是将这个commit合并到前一个commit。这边把后面两个commit前面的pick改为squach，或者简写s（按键i进入编辑状态），然后（按esc退出编辑状态）输入：wq，完成退出并保存。
+这边要了解两个命令：`pick，squash`。pick是要执行这个commit，squash是将这个commit合并到前一个commit。这边把后面两个commit前面的pick改为squash，或者简写s（按键i进入编辑状态），然后（按esc退出编辑状态）输入：wq，完成退出并保存。
 ![img](Images/git-rebase-modified.png)
 
 这时又会弹出vim窗口，是要编辑commit message.
