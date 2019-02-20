@@ -22,7 +22,18 @@ sudo tlmgr update --self && sudo tlmgr update --all
 
 第二行命令输入，提示tlmgr不存在...还没解决；
 
-****
+reinstall了mactex，再去tlmgr还是提示不存在，vscode里面已经装了Latex Workshop，第二天再运行居然就又好了...
+
+**VScode 安装 Latex Workshop**
+
+![img](images/vscode.png)
+
+**VScode 下打开latex文件**
+
+tex文件右上角有个小放大镜🔍加pdf的符号，点击，出现下图：
+
+![img](images/vscode-latex.png)
+
 
 ## 参考
 
