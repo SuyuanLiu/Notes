@@ -11,8 +11,8 @@
 
 **添加ssh密钥到ssh-agent**   
 
-- 启动ssh-agent: `eval "ssh-agent -s"`
-- 添加密钥到ssh-agent: `ssh -add /c/Users/HP/.ssh/id_rsa`
+- 启动ssh-agent: `` eval `ssh-agent -s` ``
+- 添加密钥到ssh-agent: `ssh-add '/c/Users/HP/.ssh/id_rsa'`
 
 **添加公钥到GitHub账户**
 
