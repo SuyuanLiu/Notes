@@ -12,7 +12,7 @@
 
 在 Mac 下使用命令：`ls ~/.ssh/`查看已有的密钥，比如：id_rsa 和 id_rsa_pub 是一对密钥。
 
-生成新的密钥，使用命令：`ssh-keygen -t rsa -f ~./ssh/id_rsa_2 -C "yourmail@xxx.com"`。
+生成新的密钥，使用命令：`ssh-keygen -t rsa -f ~/.ssh/id_rsa_2 -C "yourmail@xxx.com"`。
 
 - `-f`后面跟着指定存放文件的路径名，可省略，变为：`ssh-keygen -t rsa -C "yourmail@xxx.com"`
 - id_rsa_2 为自己为文件取的名字，可更改，不与之前的密钥文件名重复即可；
